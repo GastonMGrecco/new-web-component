@@ -20,5 +20,14 @@
     "vanilla"
   ],
   "author": "Gaston Maximiliano Grecco (G.M.G)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GastonMGrecco/new-web-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GastonMGrecco/new-web-component/issues"
+  },
+  "homepage": "https://github.com/GastonMGrecco/new-web-component#readme"
 }

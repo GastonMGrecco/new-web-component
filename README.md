@@ -42,6 +42,9 @@ This is a simple creator of a native Web Component
 
 <img src="./images/image-my-web-component.png" height=160/>
 
+## MyWebComponent.js
+
+<img src="./images/code.png" width=600/>
 
 ### Contact me
 gastonmgrecco@gmail.com
