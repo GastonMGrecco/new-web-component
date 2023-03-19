@@ -30,6 +30,8 @@ inquirer.prompt(
             const text_replaced = partial_text
             .replace("web-component-template", `${answer.name.toLowerCase()}-tag`)
             .replace(/WebComponent/, fileName)
+            .replace("My Web Component", fileName)
+            .replace("My Web Component", fileName)
             .replace(/WebComponent/, fileName);
             write.write(text_replaced);
         });

@@ -1,10 +1,10 @@
 
-/*export default*/ class WebComponent extends HTMLElement {
+class WebComponent extends HTMLElement {
     constructor() {
         super()
 
         this.Css;
-        this.HTML;
+        this.Html;
         this.Js;
         this.attachShadow({ mode: 'open' });
 
@@ -23,13 +23,17 @@
 
     // Logic Js
     Js() {
-
+        const link = document.createElement('link');
+        document.querySelector('title').textContent = 'My Web Component';
+        link.rel = 'shortcut icon';
+        link.href = 'https://www.svgrepo.com/show/354542/webcomponents.svg';
+        document.querySelector('head').appendChild(link)
     }
-    // HTML targets
-    HTML() {
+    // Html targets
+    Html() {
         return `
       <h1>My Web Component</h1>
-      <img src="https://branditechture.agency/brand-logos/wp-content/uploads/wpdm-cache/Webcomponents-900x0.png" />
+      <img src="https://www.svgrepo.com/show/354542/webcomponents.svg" />
     `
 
     }
@@ -37,36 +41,36 @@
     Css() {
         return `
         <style>
-    /* :host is for shadowRoot's styles */
-    :host {
-        align-items: center;
-        background-color: #eee;
-        display: flex;
-        flex-direction: column;
-        height: calc(100vh - 10rem);
-        padding-top: 10rem;
-        width: 100vw;
-    }
+            :host {
+                /* :host is for shadowRoot's styles */
+                align-items: center;
+                background-color: #eee;
+                display: flex;
+                flex-direction: column;
+                height: calc(100vh - 10rem);
+                padding-top: 10rem;
+                width: 100vw;
+            }
 
-    h1 {
-        color: rgba(1, 1, 1, 255);
-        font-family: "sans";
-        font-size: 4rem;
-        padding: 15px;
-        text-align: center;
-    }
+            h1 {
+                color: rgba(1, 1, 1, 255);
+                font-family: "sans";
+                font-size: 4rem;
+                padding: 15px;
+                text-align: center;
+            }
 
-    img {
-        width: 40rem
-    }
-</style>
+            img {
+                width: 30rem
+            }
+        </style>
     `;
     }
 
     render() {
         this.shadowRoot.innerHTML = `
                 ${this.Css()}
-                ${this.HTML()}
+                ${this.Html()}
                 `;
     }
 
@@ -77,4 +81,4 @@
 }
 
 
-window.customElements.define('web-component-template', WebComponent );
+window.customElements.define('web-component-template', WebComponent);
