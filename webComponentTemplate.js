@@ -2,7 +2,7 @@
 class WebComponent extends HTMLElement {
     constructor() {
         super()
-
+        
         this.Css;
         this.Html;
         this.Js;
@@ -11,9 +11,12 @@ class WebComponent extends HTMLElement {
     }
 
     static get observedAttributes() {
+        // This array contain the names of the attributes you want to observe
         return ['']
     }
     attributeChangedCallback(atribute, oldatribute, newatribute) {
+        // This is called when the element attributes is changed
+        console.log('Custom square element attributes changed.');
         switch (atribute) {
             case '':
                 break;
@@ -75,8 +78,19 @@ class WebComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        // This is called when the element is added to page
+        console.log('Custom square element added to page.');
         this.render();
         this.Js();
+    }
+    disconnectedCallback() {
+        // This is called when the element is removed from page 
+        console.log('Custom square element removed from page.');  
+    }
+
+    adoptedCallback() {
+        // This is called when the element is moved to new page
+        console.log('Custom square element moved to new page.');
     }
 }
 
